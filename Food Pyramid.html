@@ -1,0 +1,984 @@
+<!DOCTYPE html><!-- boiler -->
+<html><!-- boiler ,each tag has a closing tag with / -->
+	<head>
+		<!-- tab header -->	
+		<title>Food Pyramid Diary</title>
+		<style type="text/css">
+			#main-header
+			{
+				text-align:center;
+				background-color:red;
+				color:white;
+				padding:10px;
+			}
+			 
+			#main-text
+			{
+				text-align:center;
+				font-size:140%;
+				font:bold,Arias;
+			}
+
+			.pyramid-holder 
+			{
+			  text-align: center;
+			}
+
+			#level-1 
+			{
+				position: relative;
+				border-bottom: 250px solid darkred;
+				border-left: 125px solid transparent;
+				border-right: 125px solid transparent;
+				height: 0;
+				width: 0px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#level-2 
+			{
+				position: relative;
+				border-bottom: 150px solid darkorange;
+				border-left: 75px solid transparent;
+				border-right: 75px solid transparent;
+				height: 0;
+				width: 270px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#level-3 
+			{   
+			    position: relative;
+				border-bottom: 150px solid gold;
+				border-left: 75px solid transparent;
+				border-right: 75px solid transparent;
+				height: 0;
+				width: 440px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#level-4 
+			{
+			    position: relative;
+				border-bottom: 150px solid teal;
+				border-left: 75px solid transparent;
+				border-right: 75px solid transparent;
+				height: 0;
+				width: 590px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#level-5 
+			{
+			    position: relative;
+				border-bottom: 150px solid saddlebrown;
+				border-left: 75px solid transparent;
+				border-right: 75px solid transparent;
+				height: 0;
+				width: 740px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#level-6
+			{
+			    position: relative;
+				border-bottom: 150px solid darkgreen;
+				border-left: 75px solid transparent;
+				border-right: 75px solid transparent;
+				height: 0;
+				width: 890px;
+				margin-right:auto;
+				margin-left:auto;
+			}
+
+			#seperator-one
+			{
+				border-bottom:25px solid white;
+			}
+
+			#seperator-two
+			{
+				border-bottom:25px solid white;
+			}
+
+			table, th, td 
+			{
+  				border: 1px solid black;
+			}
+
+			table
+			{
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			th
+			{
+				height: 50px;
+				background-color:blue;
+				color:white; 
+			}
+
+			td
+			{
+				text-align: center;
+			}
+
+			#caption
+			{
+				font-size: 150%;
+			}
+
+			ul
+			{
+				font-size: 125%;
+			}
+
+			#bq
+			{
+				font-size:135%;
+			}
+
+			td:hover 
+			{
+				background-color: lime;
+			}
+
+			ul:hover
+			{
+				color:maroon;
+			}
+
+
+			#link:hover
+			{
+				color:red;
+			}
+
+			#footer-pyramid
+			{
+				font-size: 150%;
+				text-align: center;
+			}
+
+			#Date
+			{
+				text-align: center;
+				font-size: 120%;
+			}
+
+			#dot-level-1
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:180px;
+				left: -85px;
+				color:white;
+			}
+			#dot-level-2
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 50px;
+				color:white;
+			}
+			#dot-level-3
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 130px;
+				color:white;
+			}
+			#dot-level-4
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 205px;
+				color:white;
+			}
+			#dot-level-5
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 280px;
+				color:white;
+			}
+			
+			#dot-level-6
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 355px;
+				color:white;
+			}
+			
+			#dot2-level-1
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:180px;
+				left: -25px;
+				color:white;
+			}
+			#dot2-level-2
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 110px;
+				color:white;
+			}
+			#dot2-level-3
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 190px;
+				color:white;
+			}
+			#dot2-level-4
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 265px;
+				color:white;
+			}
+			#dot2-level-5
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 340px;
+				color:white;
+			}
+			#dot2-level-6
+			{
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				left: 415px;
+				color:white;
+			}
+
+			#dot3-level-1
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:180px;
+				left:40px;
+				color:white;
+			}
+			#dot3-level-2
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				right:45px;
+				color:white;
+			}
+			#dot3-level-3
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				right:130px;
+				color:white;
+			}
+			#dot3-level-4
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				right:205px;
+				color:white;
+			}
+			#dot3-level-5
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				right:280px;
+				color:white;
+			}
+			
+			#dot3-level-6
+			{
+				visibility:hidden;
+				height: 50px;
+				width: 50px;
+				background-color: black;
+				border-radius: 50%;
+				position: absolute;
+				top:50px;
+				right:355px;
+				color:white;
+			}
+			.inside-text
+			{
+				position: absolute;
+				top:10px;
+				right: 19px;
+				font-size: 150%;
+			}
+			
+			
+			#level-1:hover #dot-level-1
+			{
+				visibility:visible;
+			}
+			#level-1:hover #dot3-level-1
+			{
+				visibility:visible;
+			}
+			#level-2:hover #dot-level-2
+			{
+				visibility:visible;
+			}
+			#level-2:hover #dot3-level-2
+			{
+				visibility:visible;
+			}
+			#level-3:hover #dot-level-3
+			{
+				visibility:visible;
+			}
+			#level-3:hover #dot3-level-3
+			{
+				visibility:visible;
+			}
+			#level-4:hover #dot-level-4
+			{
+				visibility:visible;
+			}
+			#level-4:hover #dot3-level-4
+			{
+				visibility:visible;
+			}
+			#level-5:hover #dot-level-5
+			{
+				visibility:visible;
+			}
+			#level-5:hover #dot3-level-5
+			{
+				visibility:visible;
+			}
+			#level-6:hover #dot-level-6
+			{
+				visibility:visible;
+			}
+			#level-6:hover #dot3-level-6
+			{
+				visibility:visible;
+			}
+		</style>
+		
+		<script>
+			function increaseValueLevel1 ()
+			{
+				var elm1=document.getElementById("num1");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			function increaseValueLevel2 ()
+			{
+				var elm1=document.getElementById("num2");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			function increaseValueLevel3 ()
+			{
+				var elm1=document.getElementById("num3");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			function increaseValueLevel4 ()
+			{
+				var elm1=document.getElementById("num4");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			function increaseValueLevel5 ()
+			{
+				var elm1=document.getElementById("num5");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			function increaseValueLevel6 ()
+			{
+				var elm1=document.getElementById("num6");
+				var number = parseInt(elm1.innerHTML);
+				if(number<20)
+				{
+					number++;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML = 20;
+				}
+			}
+			
+			function decreaseValueLevel1 ()
+			{
+				var elm1=document.getElementById("num1");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function decreaseValueLevel2 ()
+			{
+				var elm1=document.getElementById("num2");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function decreaseValueLevel3 ()
+			{
+				var elm1=document.getElementById("num3");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function decreaseValueLevel4 ()
+			{
+				var elm1=document.getElementById("num4");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function decreaseValueLevel5 ()
+			{
+				var elm1=document.getElementById("num5");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function decreaseValueLevel6 ()
+			{
+				var elm1=document.getElementById("num6");
+				var number = parseInt(elm1.innerHTML);
+				if(number>0)
+				{
+					number--;
+					elm1.innerHTML = number;
+				}
+				else
+				{
+					elm1.innerHTML=0;
+				}
+			}
+			function colourchangeLevel1()
+			{
+				var elm1=document.getElementById("num1");
+				var number = parseInt(elm1.innerHTML);
+				if(number >0)
+				{
+					document.getElementById("dot2-level-1").style.background = "FireBrick";
+				}
+				else if(number == 0)
+				{
+					document.getElementById("dot2-level-1").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-1").style.background =  "black";
+				}
+			}
+			function colourchangeLevel2()
+			{
+				var elm1=document.getElementById("num2");
+				var number = parseInt(elm1.innerHTML);
+				if(number >1)
+				{
+					  document.getElementById("dot2-level-2").style.background = "FireBrick";
+				}
+				else if(number==1)
+				{
+					document.getElementById("dot2-level-2").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-2").style.background =  "black";
+				}
+			}
+			function colourchangeLevel3()
+			{
+				var elm1=document.getElementById("num3");
+				var number = parseInt(elm1.innerHTML);
+				if(number >2)
+				{
+					  document.getElementById("dot2-level-3").style.background = "FireBrick";
+				}
+				else if(number == 2)
+				{
+					document.getElementById("dot2-level-3").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-3").style.background =  "black";
+				}
+			}
+			function colourchangeLevel4()
+			{
+				var elm1=document.getElementById("num4");
+				var number = parseInt(elm1.innerHTML);
+				if(number > 3)
+				{
+					  document.getElementById("dot2-level-4").style.background = "FireBrick";
+				}
+				else if(number == 3 )
+				{
+					document.getElementById("dot2-level-4").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-4").style.background =  "black";
+				}
+			}
+			function colourchangeLevel5()
+			{
+				var elm1=document.getElementById("num5");
+				var number = parseInt(elm1.innerHTML);
+				if(number >5)
+				{
+					  document.getElementById("dot2-level-5").style.background = "FireBrick";
+				}
+				else if(number>=3 && number <=5)
+				{
+					document.getElementById("dot2-level-5").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-5").style.background =  "black";
+				}
+			}
+			function colourchangeLevel6()
+			{
+				var elm1=document.getElementById("num6");
+				var number = parseInt(elm1.innerHTML);
+				if(number >7)
+				{
+					document.getElementById("dot2-level-6").style.background = "FireBrick";
+				}
+				else if(number >=5 && number<=7)
+				{
+					document.getElementById("dot2-level-6").style.background =  "chartreuse";
+				}
+				else
+				{
+					document.getElementById("dot2-level-6").style.background =  "black";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<header id="main-header">
+			<!-- Headings -->
+			<h1> Food Pyramid Diary</h1>
+		</header>
+		
+		<section>
+			<!-- paraghs -->
+			<p id="main-text">
+				The food pyramid below encorporates six levels which range from healthier foods from the bottom of the pyramid to less healthier foods at the top of the pyramid.
+				The visual representation of the pyramid coincides with the functionality of the pyramid, as the food at the bottom of the pyramid is to be eaten more than the food at the top.
+				There is also additional information surrounding intake and portion sizes.The recommended daily calorie intake is 2,000 calories a day for women and 2,500 for men.
+			</p>
+			
+			<!-- lists(ordered and unordered) -->
+			<ul>
+			
+				<!-- bullet points form lists -->
+				<li>level 1 Food Group:<small> Foods and Drinks high in Fat, Sugar & Salt. </small></li>
+				<li>level 2 Food Group:<small> Fats,Spreads & Sweets. </small> </li>
+				<li>level 3 Food Group:<small> Meats, Poultry, Fish, Eggs, Beans & Nuts. </small></li>
+				<li>level 4 Food Group:<small> Milk, Yoghurts & Cheese. </small></li> 
+				<li>level 5 Food Group:<small> Wholemeal Cereals, Potatoes, Pasta, Rice & Breads. </small></li>
+				<li>level 6 Food Group:<small> Vegetables, Salad, Fruit. </small></li>
+			</ul>
+			
+			<ul>
+				<li>Recommended intake of level 1:<small> Not Every Day.(maximum once or twice a week) </small></li>
+				<li>Recommended intake of level 2:<small> In Very Small Amounts. </small></li>
+				<li>Recommended intake of level 3:<small> 2 Servings a day. </small></li>
+				<li>Recommended intake of level 4:<small> 3 Servings a day. </small></li>
+				<li>Recommended intake of level 5:<small> 3-5 Servings a day. </small></li>
+				<li>Recommended intake of level 6:<small> 5-7 Servings a day.</small></li> 			
+			</ul>
+			
+			<!-- Quotations -->
+			<blockquote id ="bq" cite="http://www.safefood.eu">
+				Foods that contain the same type of nutrients are grouped together on each of the shelves of the Food Pyramid. 
+				This gives you a choice of different foods from which to choose a healthy diet. Following the Food Pyramid as a guide will help you get the right balance of nutritious foods within your calorie range.
+				Studies show that we take in too many calories from foods and drinks high in fat, sugar and salt, on the top shelf of the Food Pyramid. 
+				They provide very little of the essential vitamins and minerals your body needs. Limiting these is essential for healthy eating.
+			</blockquote>
+			
+			<a   id ="link" href="http://www.safefood.eu">Read More</a>
+			
+			<br>
+			<hr>
+			<br>
+			
+			<!-- table-->
+			<table>
+				<thead><!-- table body and rows <tbody> <tr> -->	
+					<tr>
+						<!-- table heading <th> -->
+						<th>Levels</th>
+						<th>Food</th>
+						<th>Portion sizes(reccomended)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- test data -->
+						<td>1</td>
+						<td>biscuits,cakes,sweets,cakes</td>
+						<td>small or fun-size servings</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>spreads ,oils</td>
+						<td>light spread or teaspoon oil per person</td>
+						<caption id ="caption">Statistics about Food</caption>
+					</tr>
+					<tr>
+						<!-- test data -->
+						<td>3</td>
+						<td>fish,pork,mince</td> 
+						<td>50-75g cooked meats or fish,7 eggs, 40g of unlsated nuts</td>
+					</tr>
+					<tr>
+						<!-- test data -->
+						<td>4</td>
+						<td>milk,yoghurt,yoghurt drink,cheese</td> 
+						<td>200ml milk,125g yoghurt,25g cheese</td>
+					</tr>
+					<tr>
+						<!-- test data -->
+						<td>5</td>
+						<td>wholemeal bread,porridge,cereal,rice</td> 
+						<td>2 slices of bread,1 cup of rice</td>
+					</tr>
+					<tr>
+						<!-- test data -->
+						<td>6</td>
+						<td>fruit,soup,juice,vegetables</td> 
+						<td>1 medium fruit, 2 small fruit,bowl of soup</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<br>
+			<hr>
+			<br>
+			
+		</section>
+
+		<div class="pyramid-holder">
+			<div id="level-1">
+				<span onClick = "increaseheightlevel1();">
+					<span onClick ="colourchangeLevel1();">
+						<span onClick = "increaseValueLevel1();" >
+							<span id="dot-level-1">
+								<div class = inside-text>+</div>
+							</span>
+						</span>
+					</span>
+				</span>
+			
+				<span id="dot2-level-1">
+					<p id = "num1">1</p>
+				</span>
+				
+				<span onClick = "increaseheightlevel1();">
+					<span onClick ="colourchangeLevel1();">
+						<span onClick = "decreaseValueLevel1();" >
+							<span id="dot3-level-1">
+								<div class = inside-text>-</div>
+							</span>
+						</span>
+					</span>
+				</span>
+				
+			</div>
+
+			<div id="seperator-one"></div>
+
+			<div id="level-2">
+				<span onClick ="colourchangeLevel2();">
+					<span onClick = "increaseValueLevel2();" >
+						<span id="dot-level-2">
+							<div class = inside-text>+</div>
+						</span>
+					</span>
+				</span>
+				
+				<span id ="dot2-level-2">
+					<p id = "num2">2</p>
+				</span>
+				
+				<span onClick ="colourchangeLevel2();">
+					<span onClick = "decreaseValueLevel2();" >
+						<span id="dot3-level-2">
+							<div class = inside-text>-</div>
+						</span>
+					</span>
+				</span>
+				
+			</div>
+
+			<div id="seperator-two"></div>
+
+			<div id="level-3">
+				<span onClick ="colourchangeLevel3();">
+					<span onClick = "increaseValueLevel3();" >
+						<span id="dot-level-3">
+							<div class = inside-text>+</div>
+						</span>
+					</span>
+				</span>
+				
+				<span id="dot2-level-3">
+					<p id = "num3">3</p>
+				</span>
+				
+				<span onClick ="colourchangeLevel3();">
+					<span onClick = "decreaseValueLevel3();" >
+						<span id="dot3-level-3">
+							<div class = inside-text>-</div>
+						</span>
+					</span>
+				</span>
+			</div>
+
+			<div id="level-4">
+				<span onClick ="colourchangeLevel4();">
+					<span onClick = "increaseValueLevel4();" >
+						<span id="dot-level-4">
+							<div class = inside-text>+</div>
+						</span>
+					</span>
+				</span>
+				
+				<span id="dot2-level-4">
+					<p id = "num4">4</p>
+				</span>
+				
+				<span onClick ="colourchangeLevel4();">
+					<span onClick = "decreaseValueLevel4();" >
+						<span id="dot3-level-4">
+							<div class = inside-text>-</div>
+						</span>
+					</span>
+				</span>
+				
+			</div>
+
+			<div id="level-5">
+				<span onClick ="colourchangeLevel5();">
+					<span onClick = "increaseValueLevel5();" >
+						<span id="dot-level-5">
+							<div class = inside-text>+</div>
+						</span>
+					</span>
+				</span>
+				
+				<span id="dot2-level-5">
+					<p id = "num5">5</p>
+				</span>
+				
+				<span onClick ="colourchangeLevel5();">
+					<span onClick = "decreaseValueLevel5();" >
+						<span id="dot3-level-5">
+							<div class = inside-text>-</div>
+						</span>
+					</span>
+				</span>
+				
+			</div>
+
+			<div id="level-6">
+				<span onClick ="colourchangeLevel6();">
+					<span onClick = "increaseValueLevel6();" >
+						<span id="dot-level-6">
+							<div class = inside-text>+</div>
+						</span>
+					</span>
+				</span>
+				
+				<span id="dot2-level-6">
+					<p id = "num6">6</p>
+				</span>
+				
+				<span onClick ="colourchangeLevel6();">
+					<span onClick = "decreaseValueLevel6();" >
+						<span id="dot3-level-6">
+							<div class = inside-text>-</div>
+						</span>
+					</span>
+				</span>
+				
+			</div>
+
+		</div>
+
+		<p id ="footer-pyramid"><bold>MY PERSONAL FOOD PYRAMID</bold></p>
+
+		<p id ="Date"><bold>TODAY'S DATE:</bold>
+			<input type="date" name="date" ></p>
+			
+		<div style ="margin-top:100px"></div> 
+	</body>
+</html>
